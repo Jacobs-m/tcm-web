@@ -5,7 +5,6 @@ interface Props {
 export const shopifyFetch = async ({ query, variables }: Props) => {
 	const endpoint = import.meta.env.SHOPIFY_API_ENDPOINT;
 	const key = import.meta.env.SHOPIFY_STOREFRONT_API_TOKEN;
-console.log(endpoint,key)
 	try {
 		const result = await fetch(endpoint, {
 			method: "POST",
