@@ -1,0 +1,121 @@
+---
+import ImagesStories from "../../components/ImagesStories"
+import BaseHead from "../../components/BaseHead.astro"
+import Body from "../../components/Body.astro"
+import {SITE_DESCRIPTION, SITE_TITLE} from "../../config.ts"
+
+export async function getStaticPaths() {
+  const stories = [
+ {
+    type: 'video',
+    url: '/videos/video.mp4',
+    thumbnail: "/images/stories/thumbnail1.png",
+    duration: 15000
+  },
+  {
+    type: 'video',
+    url: '/videos/video1.mp4',
+    thumbnail: "/images/stories/thumbnail2.png",
+    duration: 15000
+  },
+  {
+    type: 'video',
+    url: '/videos/video4.mp4',
+    thumbnail: "/images/stories/thumbnail3.png",
+    duration: 28000
+  },
+  {
+    type: 'video',
+    url: '/videos/video5.mp4',
+    thumbnail: "/images/stories/thumbnail3.png",
+    duration: 8000,
+  },
+  {
+    type: 'video',
+    url: '/videos/video6.mp4',
+    duration: 34000,
+    thumbnail: "/images/stories/thumbnail3.png",
+  },
+  {
+    type: 'video',
+    url: '/videos/video7.mp4',
+    thumbnail: "/images/stories/thumbnail3.png",
+    duration: 24000,
+  },
+  {
+    type: 'video',
+    url: '/videos/video8.mp4',
+    thumbnail: "/images/stories/thumbnail3.png",
+    duration: 30000,
+  },
+  ];
+  const postResult = stories.map((post,index) => ({
+    params: { slug:  index},
+    props: { stories },
+  }));
+
+  return [...postResult];
+}
+
+const { slug } = Astro.params
+const stories = [
+  {
+    type: 'video',
+    url: '/videos/video.mp4',
+    thumbnail: "/images/stories/thumbnail1.png",
+    duration: 15000
+  },
+  {
+    type: 'video',
+    url: '/videos/video1.mp4',
+    thumbnail: "/images/stories/thumbnail2.png",
+    duration: 15000
+  },
+  {
+    type: 'video',
+    url: '/videos/video4.mp4',
+    thumbnail: "/images/stories/thumbnail3.png",
+    duration: 28000
+  },
+  {
+    type: 'video',
+    url: '/videos/video5.mp4',
+    thumbnail: "/images/stories/thumbnail3.png",
+    duration: 8000,
+  },
+  {
+    type: 'video',
+    url: '/videos/video6.mp4',
+    duration: 34000,
+    thumbnail: "/images/stories/thumbnail3.png",
+  },
+  {
+    type: 'video',
+    url: '/videos/video7.mp4',
+    thumbnail: "/images/stories/thumbnail3.png",
+    duration: 24000,
+  },
+  {
+    type: 'video',
+    url: '/videos/video8.mp4',
+    thumbnail: "/images/stories/thumbnail3.png",
+    duration: 30000,
+  },
+];
+
+---
+<!DOCTYPE html>
+<html lang="es" class="overflow-hidden">
+  <head>
+    <BaseHead title={`Historias | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <div class="z-20 bg-zinc-900 h-screen max-h-screen w-full grid place-items-center justify-center overflow-hidden">
+      <a class="absolute z-30 top-2 left-3 text-2xl text-white font-mono" href="/">x</a>
+      <div class="w-screen h-screen">
+        <ImagesStories stories={stories} index={slug} client:load/>
+      </div>
+    </div>
+  </body>
+</html>
+

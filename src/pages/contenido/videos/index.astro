@@ -1,0 +1,20 @@
+---
+import ContentPost from '../../../layouts/ContentPost.astro'
+import VideoPosts from "../../../layouts/VideoPosts.astro";
+import getSortedVideos from "../../../utils/getSortedVideos"
+import getPagination from "../../../utils/getPagination";
+import { GET } from '../../videos.json';
+
+let videos = await GET(Astro);
+const result = await videos.json()
+const sortedPost = getSortedVideos(result)
+
+const pagination = getPagination({
+  posts: sortedPost,
+  page: 1,
+  isIndex: true,
+})
+---
+<ContentPost content='Videos'>
+  <VideoPosts {...pagination} />
+</ContentPost>

@@ -1,0 +1,30 @@
+---
+import HeaderLink from "./HeaderLink.astro"
+import { Image } from "astro:assets";
+import { STOREPAGE_URL } from "../config";
+import tcmLogo from "../../public/tcm-logo.webp"
+---
+<header class="fixed w-full py-2 backdrop-blur-xl z-20">
+  <section class="max-w-4xl mx-auto">
+    <div class="flex px-4">
+      <a href="/" class="my-1">
+        <Image
+          class="max-w-44 max-h-12 w-full object-cover" 
+          src={tcmLogo} 
+          width={176}
+          height={45}
+          loading="eager"
+          decoding="sync"
+          alt="Logo Team cellmania">
+      </a>
+      <span class="flex-1"></span>
+      <nav class="flex flex-row gap-1 items-center">
+        <HeaderLink class="group px-2 py-2 rounded-lg opacity-60 hover:opacity-100 transition-all text-sm md:text-base" href={"/sucursales"}>Sucursales</HeaderLink>
+        <HeaderLink class="group px-2 py-2 rounded-lg opacity-60 hover:opacity-100 transition-all text-sm md:text-base" href={"/contenido"}>Contenido</HeaderLink>
+        <HeaderLink class="group px-2 py-2 rounded-lg opacity-60 hover:opacity-100 transition-all text-sm md:text-base" href={"/social"}>Redes</HeaderLink>
+        <a class="group pl-2 pr-1 py-2 rounded-lg opacity-60 hover:opacity-100 transition-all text-sm md:text-base" href={STOREPAGE_URL} target="_blank">Tienda</a>
+      </nav>
+    </div>
+  </section>
+</header>
+

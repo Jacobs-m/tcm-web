@@ -1,0 +1,74 @@
+---
+import Button from "./Button.astro";
+import ImagesStories from "./ImagesStories";
+import StoriesItem from "./StoriesItem.astro";
+import { STOREPAGE_URL } from "../config";
+
+const stories = [
+  {
+    type: 'video',
+    url: '/videos/video.mp4',
+    thumbnail: "/images/stories/thumbnail1.png",
+    duration: 15000
+  },
+  {
+    type: 'video',
+    url: '/videos/video1.mp4',
+    thumbnail: "/images/stories/thumbnail2.png",
+    duration: 15000
+  },
+  {
+    type: 'video',
+    url: '/videos/video4.mp4',
+    thumbnail: "/images/stories/thumbnail3.png",
+    duration: 28000
+  },
+  {
+    type: 'video',
+    url: '/videos/video5.mp4',
+    thumbnail: "/images/stories/thumbnail3.png",
+    duration: 8000,
+  },
+  {
+    type: 'video',
+    url: '/videos/video6.mp4',
+    duration: 34000,
+    thumbnail: "/images/stories/thumbnail3.png",
+  },
+  {
+    type: 'video',
+    url: '/videos/video7.mp4',
+    thumbnail: "/images/stories/thumbnail3.png",
+    duration: 24000,
+  },
+  {
+    type: 'video',
+    url: '/videos/video8.mp4',
+    thumbnail: "/images/stories/thumbnail3.png",
+    duration: 30000,
+  },
+];
+---
+<section class="h-700px">
+  <section class="mx-auto max-w-4xl flex justify-center md:justify-between gap-2 items-center p-4">
+    <div class="w-[400px]">
+      <aside class="flex flex-col gap-6">
+        <article>
+          <p class="text-center text-xl md:text-left">🚀 Reparación y Venta de Celulares, Personalización y Mantenimiento de Computadoras</p>
+        </article>
+        <article>
+          <p class="text-center text-xl md:text-left">✌️  Ofrecemos soluciones efectivas para tus consolas, además de una amplia gama de modelos de videojuegos</p>
+        </article>
+        <article>
+          <p class="text-center text-xl md:text-left">⚡Compartimos nuestro conocimiento y experiencia a través de videos, entrevistas y podcasts</p>
+        </article>
+        <article>
+          <p class="text-center text-xl md:text-left">🪛Soporte técnico experto para asegurar que tus dispositivos electrónicos estén siempre en óptimas condiciones</p
+        </article>
+      </header>
+    </div>
+    <div class="w-[328px] h-[568px] border border-slate-300 rounded-3xl md:inline hidden overflow-hidden" transition:animate="slide" >
+      <ImagesStories stories={stories} index={0} client:load />
+    </div>
+  </section>
+</section>

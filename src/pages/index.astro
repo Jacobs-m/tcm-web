@@ -1,0 +1,95 @@
+---
+import Header from "../components/Header.astro";
+import Body from "../components/Body.astro";
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+import getSortedPosts from "../utils/getSortedPosts";
+import Card from "../components/Card.astro";
+import { getCollection } from "astro:content";
+import getSortedVideos from "../utils/getSortedVideos";
+import type { VideoYoutube } from "../types";
+import CardVideos from "../components/CardVideos.astro";
+import Button from "../components/Button.astro";
+import ArticleIcon from "../components/Icons/ArticleIcon.astro";
+import VideoIcon from "../components/Icons/VideoIcon.astro";
+import Masthead from "../components/Masthead.astro";
+import { GET } from "./videos.json";
+const posts = await getCollection("blog");
+import Services from "../components/Services.astro";
+import Store from "../components/Store.astro";
+import Summary from "../components/Summary.astro";
+import Slider from "../components/Slider";
+
+let videos = await GET(Astro);
+const result = await videos.json();
+const sortedVideos = getSortedVideos(result);
+
+const sortedPosts = await getSortedPosts(posts);
+---
+
+<html lang="es" class="scroll-smooth">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <Body>
+    <Header />
+    <main class="pt-[76px]">
+      <section class="mx-auto max-w-4xl p-0 md:p-4">
+        <Slider client:load />
+      </section>
+      <Summary articlesLength={sortedPosts.length} />
+      <Services />
+      <section class="py-12">
+        <section class="mx-auto max-w-4xl p-4 my-4">
+          <section class="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-56">
+            <div>
+              <div class="sticky top-[76px]">
+                <header class="mb-6 items-center ">
+                  <h2 class="leading-none font-bold my-6">Revisa nuestros articulos</h2>
+                  <p class="text-xl opacity-70">¡Conoce más y mantén tus dispositivos en perfecto estado!"</p>
+                </header>
+              </div>
+            </div>
+            <section class="grid grid-cols-1">
+              <section class="group">
+                {sortedPosts.map((data, index) => index < 3 && (
+                  <Card href={`/contenido/articulos/${data.slug}`} frontmatter={data.data} loading="lazy" className="mx-6"/>
+                ))}
+              </section>
+              <div style="--animation-delay: 0.6s" class="items-center fade-up inline-flex justify-end flex-wrap gap-4 mb-6">
+                <Button href={"/contenido/articulos"} className="bg-blue-900 items-center">
+                  <div class="w-6 fill-zinc-300">
+                    <ArticleIcon />
+                  </div>
+                  <span>Ver mas articulos</span>
+                </Button>
+              </div>
+            </section>
+          </section>
+        </section>
+      </section>
+      <Store />
+      <Masthead />
+      <section class=" mx-auto max-w-4xl p-4 mt-8">
+        <header class="flex justify-between mb-6 items-center">
+          <h4 class="">Videos</h4>
+          <div style="--animation-delay: 0.6s" class="items-center fade-up inline-flex justify-end flex-wrap gap-4">
+            <Button href={"contenido/videos"} className="bg-blue-900 items-center">
+              <div class="w-6 stroke-white fill-none">
+                <VideoIcon />
+              </div>
+              <span>Ver mas videos</span>
+            </Button>
+          </div>
+        </header>
+        <section class="grid grid-cols-2 md:grid-cols-4 gap-4 group">
+          {sortedVideos.map((video: VideoYoutube, index: number) => index < 4 && (
+            <CardVideos data={video} loading="lazy"/>
+          ))}
+        </section>
+      </section>
+      <Footer />
+    </main>
+  </Body>
+</html>

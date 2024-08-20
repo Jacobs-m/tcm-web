@@ -1,0 +1,38 @@
+---
+import ContentPost from '../../../layouts/ContentPost.astro'
+import VideoPosts from "../../../layouts/VideoPosts.astro";
+import getSortedVideos from "../../../utils/getSortedVideos";
+import getPageNumbers from "../../../utils/getPageNumbers";
+import getPagination from "../../../utils/getPagination";
+import type { VideoYoutube } from "../../../types";
+import { GET } from "../../videos.json";
+
+export async function getStaticPaths() {
+  let videos = await GET(Astro);
+  const result = await videos.json()
+  const postResult = result.map((videos: VideoYoutube) => ({
+    params: { slug: videos.id },
+    props: { videos },
+  }))
+
+  const pagePaths = getPageNumbers(result.length).map(pageNum => ({
+    params: {slug: String(pageNum)}
+  }))
+
+  return [...postResult, ...pagePaths]
+}
+
+const { slug } = Astro.params
+let videos = await GET(Astro);
+const result = await videos.json()
+const sortedPost = getSortedVideos(result)
+
+const pagination = getPagination({
+  posts: sortedPost,
+  page: slug,
+})
+
+---
+<ContentPost content='Videos'>
+  <VideoPosts {...pagination} />
+</ContentPost>
