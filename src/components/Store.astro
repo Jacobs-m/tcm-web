@@ -44,6 +44,15 @@ const productsResult = await products?.json();
 </header>
 <section class="flex flex-wrap justify-center gap-x-10 gap-y-5">
   <a 
+  class="group cursor-pointer relative grid justify-items-center overflow-hidden align-items-center"
+  href={`${STOREPAGE_URL}/products/iphone-14-pro-max-512gb`}
+  target="_blank"
+>
+  <Image alt="thumbnail" loading={'eager'} class={`object-scale-down aspect-square h-44 w-44 transition duration-700 ease-in-out group-hover:scale-110`} src="/images/products/iphone_14_pro_max_512gb.webp" width={176} height={176} />
+  <h4 class="font-extrabold w-64 text-center group-hover:text-blue-800">IPhone 14 Pro Max (512GB)</h4>
+  <span class="font-extrabold text-center mt-3">$1,200.00</span>
+</a>
+  <a 
     class="group cursor-pointer relative grid justify-items-center overflow-hidden align-items-center"
     href={`${STOREPAGE_URL}/products/nintendo-switch`}
     target="_blank"
