@@ -33,7 +33,7 @@ console.log(productsResult )
     </section>
   </section>
   <section class="mx-auto max-w-4xl px-4">
-    
+   
     <!-- <Carousel client:load/> -->
   </section>
 </section>
@@ -42,6 +42,7 @@ console.log(productsResult )
   <h2 class="text-2xl font-bold">
     <span class="text-zinc-900">
       Productos Destacados
+      {JSON.stringify(productsResult.allProducts.edges[0])}
     </span>
   </h2>
 </header>
