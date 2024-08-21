@@ -21,7 +21,61 @@ const Slider = () => {
 			}}
 			modules={[Autoplay, Navigation, EffectFade]}
 		>
-			<SwiperSlide>
+						<SwiperSlide>
+				<div className="w-full h-[664px] md:h-80">
+					<div className="w-full h-full">
+						<img
+							alt="futuristic-background-with-lines-background"
+							src="/images/backgrounds/futuristic-background-with-lines.svg"
+							className="object-cover object-top h-full"
+							width={864}
+							height={664}
+							loading={"eager"}
+						/>
+					</div>
+					<div className="absolute h-full z-20 top-0 w-full">
+						<section className="grid h-full grid-cols-1 md:grid-cols-3 mx-5 md:ml-20 md:mr-0">
+							<div className="col-span-1 md:col-span-2 md:mt-20 mt-10">
+								<header>
+								<h2 className="font-roboto font-bold text-white text-center md:text-left text-5xl">
+									<span className="block">IPhone 14 Pro</span>
+									<span>Max (512GB)</span>
+									</h2>
+								</header>
+								<section className="mt-6 flex justify-center md:justify-start">
+									<div className="items-center fade-up inline-flex flex-wrap gap-4">
+										<a
+											target="_blank"
+											rel="noopener noreferrer"
+											href={STOREPAGE_URL + "/products/iphone-14-pro-max-512gb"}
+											className="btn bg-black text-zinc-300"
+										>
+											<span className="text-xl md:text-base font-bold">
+												Comprar ahora
+											</span>
+										</a>
+									</div>
+								</section>
+							</div>
+							<section className="relative z-20 mt-20">
+								<div className="relative w-full h-52 flex justify-center items-center">
+									<div className="absolute mb-14 md:mb-6">
+										<img
+											src="images/products/iphone_14_pro_max_512gb.webp"
+											className="h-80 w-80 md:h-64 z-30 aspect-auto"
+                      width={320}
+                      height={320}
+											alt="iphone 14 pro max 512gb"
+											loading={"eager"}
+										/>
+									</div>
+								</div>
+							</section>
+						</section>
+					</div>
+				</div>
+			</SwiperSlide>
+ 			<SwiperSlide>
 				<div className="w-full h-[664px] md:h-80 z-0">
 					<div className="w-full h-full">
 						<img
