@@ -26,11 +26,102 @@ const result = await videos.json();
 const sortedVideos = getSortedVideos(result);
 
 const sortedPosts = await getSortedPosts(posts);
+ 
+const siteTitle = "TeamCellMania - Reparación y Venta de Celulares en Azogues y Biblián";
+const siteDescription = "Expertos en reparación de celulares, iPhone, Android, Apple Watch, y otros dispositivos electrónicos. Venta de celulares, accesorios y servicios en Azogues y Biblián, Ecuador.";
+const siteUrl = "https://www.teamcellmania.com";
+const siteKeywords = "Reparación de celulares, venta de celulares, reparación iPhone, reparación Android, accesorios de celulares, Azogues, Biblián, Ecuador";
+const contactPhone = "+593 96 364 4323";
+const contactEmail = "teamcellmania@gmail.com";
+const address = {
+  "@type": "PostalAddress",
+  "streetAddress": "Luis Cordero Crespo 4-17 y Sucre",
+  "addressLocality": "Azogues",
+  "addressRegion": "Cañar",
+  "postalCode": "030102",
+  "addressCountry": "Ecuador"
+};
 ---
 
 <html lang="es" class="scroll-smooth">
   <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <!-- <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} /> -->
+    <title>{siteTitle}</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={siteDescription} />
+    <meta name="keywords" content={siteKeywords} />
+    <meta name="author" content="TeamCellMania" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Metaetiquetas para redes sociales -->
+    <meta property="og:title" content={siteTitle} />
+    <meta property="og:description" content={siteDescription} />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/path-to-image.jpg" />
+    <meta property="og:locale" content="es_EC" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={siteTitle} />
+    <meta name="twitter:description" content={siteDescription} />
+    <meta name="twitter:image" content="/path-to-image.jpg" />
+
+    <!-- Marcado de datos estructurados Schema.org -->
+    <script type="application/ld+json">
+    {{
+      "@context": "https://schema.org",
+      "@type": "Store",
+      "name": "TeamCellMania",
+      "url": {siteUrl},
+      "logo": "/path-to-logo.jpg",
+      "description": {siteDescription},
+      "telephone": {contactPhone},
+      "email": {contactEmail},
+      "address": {JSON.stringify(address)},
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "opens": "08:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "09:00",
+          "closes": "13:00"
+        }
+      ],
+      "additionalType": "https://schema.org/CellPhoneStore",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Azogues",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Azogues",
+          "addressRegion": "Cañar",
+          "addressCountry": "Ecuador"
+        }
+      },
+      "sameAs": [
+        "https://www.facebook.com/yourpage",
+        "https://www.instagram.com/yourpage",
+        "https://twitter.com/yourpage"
+      ]
+    }}
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" href="/path-to-favicon.ico" />
+
   </head>
   <Body>
     <Header />
