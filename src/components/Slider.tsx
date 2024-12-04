@@ -39,7 +39,7 @@ const Slider = () => {
 								<header>
 								<h2 className="font-roboto font-bold text-white text-center md:text-left text-5xl">
 									<span className="block">Meta Quest 3</span>
-									<span> </span>
+									<span>128 Gb </span>
 									</h2>
 								</header>
 								<section className="mt-6 flex justify-center md:justify-start">
