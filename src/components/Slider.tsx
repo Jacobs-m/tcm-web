@@ -38,8 +38,8 @@ const Slider = () => {
 							<div className="col-span-1 md:col-span-2 md:mt-20 mt-10">
 								<header>
 								<h2 className="font-roboto font-bold text-white text-center md:text-left text-5xl">
-									<span className="block">IPhone 14 Pro</span>
-									<span>Max (512GB)</span>
+									<span className="block">Meta Quest 3</span>
+									<span> </span>
 									</h2>
 								</header>
 								<section className="mt-6 flex justify-center md:justify-start">
@@ -47,7 +47,7 @@ const Slider = () => {
 										<a
 											target="_blank"
 											rel="noopener noreferrer"
-											href={STOREPAGE_URL + "/products/iphone-14-pro-max-512gb"}
+											href={STOREPAGE_URL + "/products/meta-quest-3"}
 											className="btn bg-black text-zinc-300"
 										>
 											<span className="text-xl md:text-base font-bold">
@@ -61,7 +61,7 @@ const Slider = () => {
 								<div className="relative w-full h-52 flex justify-center items-center">
 									<div className="absolute mb-14 md:mb-6">
 										<img
-											src="images/products/iphone_14_pro_max_512gb.webp"
+											src="images/products/Combo CONEXIÓN TOTAL.webp"
 											className="h-80 w-80 md:h-64 z-30 aspect-auto"
                       width={320}
                       height={320}
