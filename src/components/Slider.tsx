@@ -299,8 +299,8 @@ const Slider = () => {
 										<img
 											src="/images/products/P1.webp"
 											className="h-80 w-64 md:h-52 z-30 aspect-auto"
-                      width={256}
-                      height={320}
+											width={256}
+											height={320}
 											alt="touchsurface3pro"
 											loading={"eager"}
 										/>
@@ -309,8 +309,8 @@ const Slider = () => {
 										<img
 											src="/images/products/P2.webp"
 											className="h-80 w-64 md:h-52 z-40 aspect-auto"
-                      width={256}
-                      height={320}
+											width={256}
+											height={320}
 											alt="touchsurface3pro"
 											loading={"eager"}
 										/>
@@ -363,18 +363,18 @@ const Slider = () => {
 										<img
 											src="/images/products/P6.webp"
 											className="h-80 w-[218px] md:h-56  aspect-auto"
-                      width={218}
-                      height={320}
+											width={218}
+											height={320}
 											alt="touchsurface3pro"
 											loading={"eager"}
 										/>
 									</div>
 									<div className="absolute mr-28 md:mr-16 brightness-125 contrast-200 saturate-50">
 										<img
-                      src="/images/products/P5.webp"
-                      className="h-80 w-[223px] md:h-56 md:w-[156px] aspect-auto"
-                      width={223}
-                      height={320}
+											src="/images/products/P5.webp"
+											className="h-80 w-[223px] md:h-56 md:w-[156px] aspect-auto"
+											width={223}
+											height={320}
 											alt="touchsurface3pro"
 											loading={"eager"}
 										/>
