@@ -176,8 +176,8 @@ const Slider = () => {
 										<img
 											src="/images/products/CNC.webp"
 											className="h-80 w-80 md:h-64 z-30 aspect-auto"
-                      width={320}
-                      height={320}
+											width={320}
+											height={320}
 											alt="cnc"
 											loading={"eager"}
 										/>
@@ -232,8 +232,8 @@ const Slider = () => {
 										<img
 											src="/images/products/P4.webp"
 											className="h-80 md:h-52 z-30 md:w-[106px] brightness-0 aspect-auto"
-                      width={164}
-                      height={320}
+											width={164}
+											height={320}
 											alt="lcd para zte blade v4"
 											loading={"eager"}
 										/>
@@ -242,8 +242,8 @@ const Slider = () => {
 										<img
 											src="/images/products/P3.webp"
 											className="h-80 w-[164px] md:h-52 md:w-[106px] z-40 aspect-auto"
-                      width={164}
-                      height={320}
+											width={164}
+											height={320}
 											loading={"eager"}
 											alt="lcd para zte blade v4"
 										/>
